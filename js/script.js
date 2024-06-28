@@ -63,6 +63,7 @@ function countDownTimer(minutes, seconds){
             accuracy.textContent = Number.parseFloat(correctWords * 100 / Number(word_per_minute.textContent)).toFixed(1);
             error.textContent = errorCount;
             characterCount.textContent = characterCountTotal;
+            alert("Timer Done, See your result")
         }
     },1000)
    }else{
