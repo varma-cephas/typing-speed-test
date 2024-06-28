@@ -1,0 +1,65 @@
+html{
+    box-sizing: border-box;
+}
+
+*::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+section{
+    margin: 4em 0;
+}
+section h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.paragraph_container{
+    max-width: 50%;
+    margin: 0 auto;
+    border: 2px solid;
+    padding: .80em;
+}
+
+.stat{
+    border: 2px solid;
+    padding: .50em;
+    font-weight: 900;
+}
+
+.current_paragraph{
+    padding-bottom: 1.8em;
+    font-size: 1.3em;
+}
+
+.timer_stat_container{
+    width: fit-content;
+    margin: .50em auto;
+}
+
+.action_button{
+    border: 2px solid;
+    max-width: fit-content;
+    padding: .20em 1.2em;
+    margin: 2em 0;
+    cursor: pointer;
+}
+
+.action_button_container{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.stop_button{
+    display: none;
+}
+
+.try_again_button{
+    display: none;
+}
