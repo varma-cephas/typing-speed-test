@@ -103,7 +103,7 @@ setTimeout(()=>{
 
         window.addEventListener("keydown", (event)=>{
             // console.log(event.key)
-            if(event.key !== "Shift" && event.key !== "Control" && event.key !== "Backspace"  && event.key !== "Delete"  && event.key !== "Insert"  && event.key !== "Home"  && event.key !== "Alt"){
+            if(event.key !== "Shift" && event.key !== "Control" && event.key !== "Backspace"  && event.key !== "Delete"  && event.key !== "Insert"  && event.key !== "Home"  && event.key !== "Alt" && event.key !== "CapsLock"){
                 word += event.key;
                 characterCountTotal += 1;
             }
