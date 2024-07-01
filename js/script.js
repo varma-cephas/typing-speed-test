@@ -5,7 +5,6 @@ let wordPerMinute = 0;
 let correctWords = 0
 let errorCount = 0;
 let characterCountTotal = 0
-
 let arrOfParagraphWords;
 
 const current_paragraph = document.querySelector(".current_paragraph");
@@ -40,7 +39,7 @@ async function addParagraphToArr(){
 
 function getRandomParagraph(arrName){
     let randomArrElementIndex = Math.floor(Math.random() * arrName.length);
-    return arrOfParagraphs[randomArrElementIndex]
+    return arrName[randomArrElementIndex]
 }
 
 function countDownTimer(minutes, seconds){
@@ -54,6 +53,16 @@ function countDownTimer(minutes, seconds){
             minutesLeft.textContent--
             secondsLeft.textContent = seconds;
         }
+        if(randomParagraph.split(" ").length === wordPerMinute){
+            minutesLeft.textContent = minutes
+            secondsLeft.textContent = seconds
+            clearInterval(timerInterval);
+            word_per_minute.textContent = wordPerMinute / 1;
+            accuracy.textContent = Number.parseFloat(correctWords * 100 / Number(word_per_minute.textContent)).toFixed(1);
+            error.textContent = errorCount;
+            characterCount.textContent = characterCountTotal;
+            alert("Well done, See your result")
+        }
 
         if(minutesLeft.textContent < '0'){
             minutesLeft.textContent = minutes
@@ -62,6 +71,7 @@ function countDownTimer(minutes, seconds){
             word_per_minute.textContent = wordPerMinute / 1;
             accuracy.textContent = Number.parseFloat(correctWords * 100 / Number(word_per_minute.textContent)).toFixed(1);
             error.textContent = errorCount;
+            // console.log(arrOfWords[0].join(" ").length)
             characterCount.textContent = characterCountTotal;
             alert("Timer Done, See your result")
         }
@@ -1076,7 +1086,7 @@ setTimeout(()=>{
         })
     })
     // console.log(arrOfWords)
-    console.log(arrOfParagraphWords.length)
+    // console.log(arrOfParagraphWords.length)
 },1050)
 
 word_per_minute.textContent = wordPerMinute
